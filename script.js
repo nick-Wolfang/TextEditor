@@ -7,12 +7,17 @@
 
 
 
-function updateText(){
+  function updateText(){
     // CODE GOES HERE
-  }
-  
+    let text = document.getElementById('text-input').value;
+    document.getElementById('text-output').textContent = text;
+}
+  console.log(document.getElementById('text-input').value);
+
   function makeBold(elem){
     //CODE GOES HERE
+    elem.classList.toggle('active');
+    document.getElementById('text-output').classList.toggle('bold');
   }
   
   /**
@@ -20,6 +25,8 @@ function updateText(){
    */
   function makeItalic(elem){
     //CODE GOES HERE
+    elem.classList.toggle('active');
+    document.getElementById('text-output').classList.toggle('italic');
   }
   
   function makeUnderline(elem){
