@@ -7,26 +7,26 @@
 
 
 
-  function updateText(){
+  updateText = () => {
     let text = document.getElementById('text-input').value;
     document.getElementById('text-output').textContent = text;
 }
   console.log(document.getElementById('text-input').value);
 
-  function makeBold(elem){
+  makeBold = (elem) =>{
     elem.classList.toggle('active');
     document.getElementById('text-output').classList.toggle('bold');
   }
   
-  function makeItalic(elem){
+  makeItalic = (elem) =>{
     elem.classList.toggle('active');
     document.getElementById('text-output').classList.toggle('italic');
   }
   
-  function makeUnderline(elem){
+  makeUnderline = (elem) =>{
     // elem.classList.toggle('active');
     // document.getElementById('text-output').classList.toggle('underline');
-    var check = document.getElementById('text-output').classList;
+    let check = document.getElementById('text-output').classList;
 
     if (check.contains('underline', 'active')) 
       check.remove('underline', 'active');
@@ -34,10 +34,13 @@
       check.add('underline', 'active');
   }
   
-  function alignText(elem, alignType){
+  alignText = (elem, alignType) => {
     elem.classList.toggle('active');
     document.getElementById('text-output').style.textAlign = alignType;
-    let buttonList = document.getElementsByClassName('align');
-    for(let i = 0; i<buttonList.length; i++)
-      buttonList[i].classList.remove('active');
+    let alignButtons = document.getElementsByClassName('align');
+    for(let button of alignButtons){
+      button.classList.remove('active');
+    }
   }
+
+  
